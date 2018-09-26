@@ -3,17 +3,17 @@
 socket.on('connect', function () {
     console.log('connected to server');
 
-    socket.emit('createEmail',
-        {
-            to: "davide.monticelli@hotmail.it",
-            text: "Hello"
-        });
+    //socket.emit('createEmail',
+    //    {
+    //        to: "davide.monticelli@hotmail.it",
+    //        text: "Hello"
+    //    });
 
-    socket.emit('createMessage',
-        {
-            from: "montic",
-            text: "Hello Hello"
-        });
+    //socket.emit('createMessage',
+    //    {
+    //        from: "montic",
+    //        text: "Hello Hello"
+    //    });
 });
 
 socket.on('disconnect', function () {
