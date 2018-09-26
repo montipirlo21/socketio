@@ -24,9 +24,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="public\" />
+    <Folder Include="public\js\" />
     <Folder Include="server\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include=".gitignore">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="public\js\index.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="server\server.js">
       <SubType>Code</SubType>
     </Compile>
