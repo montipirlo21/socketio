@@ -1,0 +1,5 @@
+﻿node_modules/
+.vs/
+bin/
+obj/
+server/config/config.json         
