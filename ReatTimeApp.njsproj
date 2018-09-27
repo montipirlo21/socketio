@@ -25,7 +25,9 @@
   <ItemGroup>
     <Folder Include="public\" />
     <Folder Include="public\js\" />
+    <Folder Include="public\js\lib\" />
     <Folder Include="server\" />
+    <Folder Include="server\utils\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include=".gitignore">
@@ -34,7 +36,16 @@
     <Compile Include="public\js\index.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="public\js\lib\jquery-3.3.1.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="server\server.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="server\utils\message.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="server\utils\message.test.js">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

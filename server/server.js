@@ -16,50 +16,19 @@ app.use(express.static(publicPath));
 io.on('connection', (socket) => {
     console.log("New user connected");
 
-    socket.emit('newMessage', {
-        from: 'Admin',
-        text: 'Welcome to the chat app',
-        createAt: new Date().getTime()
-    });
-
-    socket.broadcast.emit('newMessage', {
-        from: 'Admin',
-        text: 'A new user joined the chat',
-        createAt: new Date().getTime()
-    });
-
-    //socket.emit('newEmail', {
-    //    from: "davide.monticelli@hotmail.it",
-    //    text: "Hello",
-    //    createAt : 123
-    //});
-
-    //socket.emit('newMessage', {
-    //    from: "montipirlo",
-    //    text: "Hello",
-    //    createAt: 123
-    //});
-
+    socket.emit('newMessage', generateMessage('Admin', 'Welcome to the chat app'));
+    socket.broadcast. emit('newMessage', generateMessage('Admin', 'A new user joined the chat'));
+       
     socket.on('createEmail', (newEmail) => {
         console.log('createEmail ', newEmail);
     });
 
-    socket.on('createMessage', (message) => {
+    socket.on('createMessage', (message ,callback) => {
         console.log('createMessage ', message);
-
-         io.emit('newMessage', {
-            from: message.from,
-            text: message.text,
-            createAt: new Date().getTime()
-        });
-
+        io.emit('newMessage', generateMessage(message.from, message.text));
+        callback('This is from the server');
         // A tutti tranne il socket
-        socket.broadcast.emit('newMessage', {
-            from: message.from,
-            text: message.text,
-            createAt: new Date().getTime()
-        });
-
+        //socket.broadcast.emit('newMessage', generateMessage(message.from, message.text));
     });
 
     socket.on('disconnect', () => {
