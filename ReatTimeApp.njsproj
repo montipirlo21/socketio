@@ -47,6 +47,10 @@
     <Compile Include="public\js\lib\jquery-3.3.1.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="public\js\lib\moment.js" />
+    <Compile Include="public\js\lib\mustache.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="server\server.js">
       <SubType>Code</SubType>
     </Compile>
